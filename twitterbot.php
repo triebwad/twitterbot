@@ -25,8 +25,11 @@ $newsTitle = $item->get_title();
 $block = array("dead","killed","murder","rape");
 $flag = 0;
 
+// convert news to lowercase for comparison
+$newsTitleLower = strtolower($newsTitle);
+
 foreach($block as $blocker){
- if ( strpos($newsTitle,$blocker) ) {
+ if ( strpos($newsTitleLower,$blocker) ) {
    $flag = 1;
    //no comment
  }
